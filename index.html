@@ -1,80 +1,918 @@
 <!doctype html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="theme-color" content="#3d152b" />
-  <title>Beauty Learning Partnership</title>
-  <meta name="description" content="A tailored beauty education partnership: own a PLR collection or train learners through a managed business dashboard." />
-  <meta property="og:title" content="Beauty Learning Partnership" />
-  <meta property="og:description" content="Two flexible ways to build your beauty education brand." />
-  <meta property="og:type" content="website" />
-  <meta property="og:image" content="public/og.png" />
-  <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="Beauty Learning Partnership" />
-  <meta name="twitter:description" content="Two flexible ways to build your beauty education brand." />
-  <meta name="twitter:image" content="public/og.png" />
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,600;0,700;1,600&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="styles.css" />
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Beauty Learning Partnership</title>
+<meta name="description" content="License 17 professional online beauty courses, including 5 exclusive new courses, and sell them under your own academy's name. One-time fee, no per-learner charges.">
+<meta name="theme-color" content="#fbf6f2">
+<meta property="og:title" content="Beauty Learning Partnership">
+<meta property="og:description" content="17 professional beauty courses, including 5 exclusive new courses, to rebrand, host and sell as your own.">
+<meta property="og:image" content="https://janets-partnership.vercel.app/og.png">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Jost:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --plum:#3a1129; --plum-2:#56203f; --wine:#6e2a4d;
+  --ink:#2a1420; --body:#4a3640; --muted:#6b5660;
+  --ivory:#fffcfa; --porcelain:#fbf6f2; --blush:#f6e8e3; --rose:#ecd2cb;
+  --gold:#a77a47; --gold-soft:#e7cfa6; --gold-pale:#f6ead6;
+  --line:#ead9d2;
+  --emerald:#0e3a35; --emerald-2:#1d5e54; --emerald-ink:#0a2b27; --mint:#d7ebe4;
+  --serif:"Cormorant Garamond","Times New Roman",serif;
+  --sans:"Jost","Helvetica Neue",Arial,sans-serif;
+  --wrap:1200px; --gutter:clamp(16px,4vw,48px);
+  --r-lg:24px; --r-md:16px;
+  --shadow:0 2px 4px rgba(58,17,41,.04), 0 24px 48px -28px rgba(58,17,41,.30);
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--porcelain);color:var(--ink);font:400 17px/1.7 var(--sans);-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility}
+img{max-width:100%;display:block}
+a{color:inherit}
+button{font:inherit;color:inherit}
+:focus-visible{outline:2px solid var(--gold);outline-offset:3px;border-radius:6px}
+.wrap{max-width:var(--wrap);margin:0 auto;padding:0 var(--gutter)}
+h1,h2,h3,h4{font-family:var(--serif);font-weight:500;line-height:1.05;margin:0;color:var(--plum)}
+h2{font-size:clamp(40px,5vw,62px)}
+p{margin:0}
+.lede{font-size:clamp(17px,1.5vw,19px);color:var(--body);max-width:58ch}
+section{padding:clamp(72px,10vw,124px) 0}
+.sec-head{display:grid;gap:16px;margin-bottom:clamp(36px,5vw,56px);max-width:760px}
+.sec-head.center{margin-left:auto;margin-right:auto;text-align:center;justify-items:center}
+
+/* buttons */
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;padding:16px 30px;border-radius:999px;font:500 15.5px/1 var(--sans);letter-spacing:.02em;text-decoration:none;border:1px solid transparent;cursor:pointer;transition:background .2s,color .2s,border-color .2s,box-shadow .2s}
+.btn-plum{background:var(--plum);color:var(--ivory);box-shadow:0 12px 24px -12px rgba(58,17,41,.55)}
+.btn-plum:hover{background:var(--plum-2)}
+.btn-line{border-color:rgba(58,17,41,.35);color:var(--plum);background:transparent}
+.btn-line:hover{border-color:var(--plum);background:rgba(58,17,41,.04)}
+.btn-gold{background:var(--gold-soft);color:var(--plum)}
+.btn-gold:hover{background:#f0dcb9}
+.btn-light{background:transparent;border-color:rgba(255,252,250,.6);color:var(--ivory)}
+.btn-light:hover{border-color:var(--ivory);background:rgba(255,252,250,.08)}
+
+/* header */
+.top{position:sticky;top:0;z-index:20;background:rgba(36,9,26,.92);backdrop-filter:saturate(1.2) blur(10px);border-bottom:1px solid rgba(231,207,166,.18)}
+.top .wrap{display:flex;justify-content:space-between;align-items:center;height:76px;gap:16px}
+.brand{display:flex;align-items:baseline;gap:10px;text-decoration:none;min-width:0}
+.brand b{font:500 26px/1 var(--serif);color:var(--ivory);white-space:nowrap}
+.brand span{font:400 14px/1 var(--sans);color:var(--gold-soft)}
+.top nav{display:flex;align-items:center;gap:28px;font-size:15px}
+.top nav a:not(.btn){color:#ecdbe2;text-decoration:none}
+.top nav a:not(.btn):hover{color:var(--ivory)}
+.top nav .btn{padding:12px 22px;font-size:14.5px}
+@media (max-width:960px){.top nav a:not(.btn){display:none}}
+.top nav .btn{white-space:nowrap}
+@media (max-width:560px){.brand span{display:none}.brand{min-width:0;flex:1}.brand b{font-size:18px;overflow:hidden;text-overflow:ellipsis;display:block}.top nav .btn{padding:10px 14px;font-size:13.5px}}
+
+/* hero */
+.hero{position:relative;overflow:hidden;padding:clamp(56px,7vw,96px) 0 0;color:var(--ivory);background:
+  radial-gradient(70% 80% at 88% 10%, #6e2a4d 0%, rgba(110,42,77,0) 70%),
+  radial-gradient(60% 70% at 0% 100%, #4a1736 0%, rgba(74,23,54,0) 70%), #2a0b1e}
+.hero-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:clamp(32px,5vw,72px);align-items:center}
+.hero h1{font-size:clamp(48px,6vw,84px);font-weight:500;line-height:1;color:var(--ivory)}
+.hero h1 em{font-style:italic;color:var(--gold-soft)}
+.hero .lede{margin-top:26px;max-width:46ch;font-size:clamp(18px,1.6vw,20px);color:#f1e3e9}
+.hero-ctas{display:flex;flex-wrap:wrap;gap:14px;margin-top:38px}
+.trust{display:flex;flex-wrap:wrap;gap:10px 22px;margin-top:30px;font-size:15px;color:#ecdbe2}
+.trust span{display:inline-flex;align-items:center;gap:8px}
+.trust svg{width:18px;height:18px;color:var(--gold-soft)}
+.mosaic{position:relative;display:grid;grid-template-columns:1.15fr .85fr;grid-template-rows:1fr 1fr;gap:16px;height:clamp(440px,48vw,580px)}
+.mosaic figure{margin:0;overflow:hidden;border-radius:var(--r-lg);background:#4a1736;box-shadow:0 30px 60px -30px rgba(0,0,0,.7)}
+.mosaic figure:first-child{grid-row:1/3;border-radius:260px 260px var(--r-lg) var(--r-lg)}
+.mosaic img{width:100%;height:100%;object-fit:cover}
+.mosaic .badge{position:absolute;left:-22px;bottom:34px;background:var(--ivory);border-radius:var(--r-md);padding:16px 20px;box-shadow:0 24px 50px -20px rgba(58,17,41,.45);display:flex;gap:14px;align-items:center;max-width:260px}
+.mosaic .badge b{font:500 42px/1 var(--serif);color:var(--emerald-2)}
+.mosaic .badge span{font-size:14.5px;line-height:1.4;color:var(--ink)}
+.facts{margin-top:clamp(56px,7vw,88px);border-top:1px solid rgba(231,207,166,.22)}
+.facts dl{display:grid;grid-template-columns:repeat(4,1fr);margin:0}
+.facts div{padding:28px 24px 34px 0;display:flex;flex-direction:column-reverse;justify-content:flex-end}
+.facts div+div{padding-left:28px;border-left:1px solid rgba(231,207,166,.22)}
+.facts dd{margin:0;font:500 clamp(38px,4vw,52px)/1 var(--serif);color:var(--ivory)}
+.facts dt{font-size:15px;color:#e3cfd8;margin-top:8px}
+@media (max-width:960px){
+  .hero-grid{grid-template-columns:1fr}
+  .mosaic{height:440px;margin-top:8px}
+  .mosaic .badge{left:12px;bottom:12px}
+  .facts dl{grid-template-columns:1fr 1fr}
+  .facts div:nth-child(3){padding-left:0;border-left:0}
+  .facts div:nth-child(n+3){border-top:1px solid rgba(231,207,166,.22)}
+}
+@media (max-width:520px){.mosaic{height:360px;gap:10px}}
+
+/* benefits */
+.benefits{display:grid;grid-template-columns:repeat(4,1fr);gap:22px}
+.benefit{padding:34px 28px;background:var(--ivory);border:1px solid var(--line);border-radius:var(--r-lg)}
+.benefit .ic{width:52px;height:52px;border-radius:50%;background:var(--gold-pale);display:grid;place-items:center;margin-bottom:22px}
+.benefit svg{width:26px;height:26px;color:var(--gold)}
+.benefit h3{font-size:29px;margin-bottom:10px}
+.benefit p{color:var(--body);font-size:16px}
+@media (max-width:1000px){.benefits{grid-template-columns:1fr 1fr}}
+@media (max-width:560px){.benefits{grid-template-columns:1fr}}
+
+/* exclusive five */
+.exclusive{background:radial-gradient(80% 120% at 100% 0%, var(--emerald-2) 0%, var(--emerald) 55%, var(--emerald-ink) 100%);color:var(--ivory)}
+.exclusive h2{color:var(--ivory)}
+.exclusive .lede{color:#dcece6}
+.ex-label{justify-self:start;display:inline-flex;align-items:center;gap:10px;background:rgba(231,207,166,.16);border:1px solid rgba(231,207,166,.45);color:var(--gold-soft);padding:8px 16px;border-radius:999px;font-size:14.5px}
+.ex-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:18px}
+.ex-card{position:relative;transition:transform .35s cubic-bezier(.2,.7,.2,1),box-shadow .35s,border-color .35s,background .35s;border-radius:var(--r-lg);padding:30px 22px 26px;background:linear-gradient(180deg,rgba(255,252,250,.10),rgba(255,252,250,.03));border:1px solid rgba(231,207,166,.35);display:flex;flex-direction:column;gap:14px;min-height:300px}
+.ex-ic{width:68px;height:68px;border-radius:50%;display:grid;place-items:center;border:1px solid rgba(231,207,166,.55);background:radial-gradient(circle at 30% 25%, rgba(231,207,166,.22), rgba(231,207,166,.04));margin-bottom:6px}
+.ex-ic svg{width:38px;height:38px;color:var(--gold-soft)}
+.ex-card h3{color:var(--ivory);font-size:24px;line-height:1.12}
+.ex-card p{font-size:15px;color:#d4e6df}
+.ex-card button{margin-top:auto;background:none;border:0;border-bottom:1px solid rgba(231,207,166,.5);padding:0 0 3px;cursor:pointer;font-size:14.5px;color:var(--gold-soft);align-self:flex-start}
+.ex-card button:hover{border-color:var(--gold-soft)}
+.ex-card:hover{transform:translateY(-6px);border-color:rgba(231,207,166,.8);background:linear-gradient(180deg,rgba(255,252,250,.16),rgba(255,252,250,.05));box-shadow:0 30px 50px -30px rgba(0,0,0,.6)}
+.ex-card:hover .ex-ic{background:radial-gradient(circle at 30% 25%, rgba(231,207,166,.4), rgba(231,207,166,.08))}
+.ex-note{margin-top:30px;font-size:15px;color:#cfe3dc}
+@media (max-width:1100px){.ex-grid{grid-template-columns:repeat(3,1fr)}}
+@media (max-width:700px){.ex-grid{grid-template-columns:1fr 1fr}}
+@media (max-width:440px){.ex-grid{grid-template-columns:1fr}.ex-card{min-height:0}}
+
+/* collection */
+.collection{background:var(--blush)}
+.coll-head{display:flex;justify-content:space-between;align-items:flex-end;gap:32px;flex-wrap:wrap;margin-bottom:36px}
+.coll-head .sec-head{margin-bottom:0}
+.filters{display:flex;flex-wrap:wrap;gap:8px}
+.filters button{border:1px solid #d9bfb6;background:var(--ivory);padding:10px 18px;border-radius:999px;font-size:15px;cursor:pointer;color:var(--ink)}
+.filters button:hover{border-color:var(--plum)}
+.filters button[aria-pressed="true"]{background:var(--plum);border-color:var(--plum);color:var(--ivory)}
+.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:28px}
+@media (max-width:1040px){.grid{grid-template-columns:1fr 1fr}}
+@media (max-width:640px){.grid{grid-template-columns:1fr}}
+.card{background:var(--ivory);border-radius:var(--r-lg);overflow:hidden;display:flex;flex-direction:column;box-shadow:var(--shadow)}
+.card[hidden]{display:none}
+.card-img{position:relative;aspect-ratio:16/10;overflow:hidden;background:var(--rose)}
+.card-img img{width:100%;height:100%;object-fit:cover;transition:transform .6s ease}
+.card:hover .card-img img{transform:scale(1.04)}
+.card-cat{position:absolute;left:16px;top:16px;background:rgba(255,252,250,.95);color:var(--plum);font:500 13px/1 var(--sans);padding:8px 13px;border-radius:999px}
+.card-body{padding:26px 26px 26px;display:flex;flex-direction:column;gap:14px;flex:1}
+.card h3{font-size:29px;line-height:1.08}
+.card .ov{color:var(--body);font-size:16px;line-height:1.65}
+.meta{display:flex;flex-wrap:wrap;gap:8px 20px;padding-top:16px;margin-top:auto;border-top:1px solid var(--line);font-size:15px;color:var(--ink)}
+.meta span{display:inline-flex;align-items:center;gap:7px}
+.meta svg{width:17px;height:17px;color:var(--gold)}
+.link-btn{align-self:flex-start;background:none;border:0;padding:4px 0;cursor:pointer;font:500 15.5px/1.2 var(--sans);color:var(--plum);border-bottom:1.5px solid var(--gold)}
+.link-btn:hover{color:var(--wine)}
+.img-fail{background:linear-gradient(135deg,#ecd2cb,#f6e8e3)!important}
+.img-fail img{display:none}
+.coll-note{margin-top:32px;font-size:15px;color:var(--body)}
+
+/* modal */
+dialog{border:0;padding:0;border-radius:var(--r-lg);width:min(880px,calc(100vw - 32px));max-height:calc(100vh - 48px);background:var(--ivory);color:var(--ink);box-shadow:0 40px 100px -30px rgba(58,17,41,.55)}
+dialog::backdrop{background:rgba(42,20,32,.55);backdrop-filter:blur(4px)}
+.m-head{position:relative;aspect-ratio:16/6;background:var(--rose);overflow:hidden}
+.m-head img{width:100%;height:100%;object-fit:cover}
+.m-close{position:absolute;right:14px;top:14px;width:42px;height:42px;border-radius:50%;border:0;background:rgba(255,252,250,.96);cursor:pointer;font-size:22px;line-height:1;color:var(--plum)}
+.m-body{padding:34px clamp(22px,4vw,44px) 40px}
+.m-body h3{font-size:clamp(34px,4vw,46px)}
+.m-cat{font-size:14.5px;color:var(--gold);margin-bottom:10px;font-weight:500}
+.m-ov{margin-top:16px;color:var(--body);max-width:66ch}
+.m-stats{display:flex;flex-wrap:wrap;gap:10px;margin:24px 0 28px}
+.m-stats span{background:var(--blush);border-radius:999px;padding:9px 16px;font-size:15px;color:var(--ink)}
+.m-sec{margin-top:22px}
+.m-sec h4{font-size:25px;margin-bottom:6px;display:flex;justify-content:space-between;align-items:baseline;gap:16px}
+.m-sec h4 small{font:400 14.5px/1 var(--sans);color:var(--body)}
+.lessons{list-style:none;margin:0;padding:0;counter-reset:l}
+.lessons li{counter-increment:l;display:grid;grid-template-columns:36px 1fr auto;gap:12px;padding:12px 0;border-bottom:1px solid var(--line);font-size:16px;align-items:baseline}
+.lessons li::before{content:counter(l,decimal-leading-zero);font:500 16px/1 var(--serif);color:var(--gold)}
+.lessons time{color:var(--body);font-size:15px;white-space:nowrap}
+.m-cta{margin-top:32px;display:flex;flex-wrap:wrap;gap:14px;align-items:center}
+.m-cta p{font-size:15px;color:var(--body)}
+
+/* request form */
+.inline-link{background:none;border:0;padding:0;cursor:pointer;color:var(--plum);text-decoration:underline;font:inherit}
+.f-body{padding:clamp(26px,4vw,44px)}
+.f-body h3{font-size:clamp(32px,4vw,42px);padding-right:44px}
+.f-intro{margin-top:10px;color:var(--body);max-width:60ch}
+.f-close{position:absolute;right:16px;top:16px;width:42px;height:42px;border-radius:50%;border:1px solid var(--line);background:var(--ivory);cursor:pointer;font-size:22px;line-height:1;color:var(--plum)}
+.pick-head{display:flex;justify-content:space-between;align-items:baseline;gap:16px;margin:26px 0 12px}
+.pick-head b{font:500 22px/1.2 var(--serif);color:var(--plum)}
+.pick-count{font-size:15px;color:var(--body)}
+.pick-count strong{color:var(--plum)}
+.picks{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}
+@media (max-width:720px){.picks{grid-template-columns:1fr 1fr}}
+@media (max-width:440px){.picks{grid-template-columns:1fr}}
+.pick{position:relative;display:grid;grid-template-columns:64px 1fr;gap:12px;align-items:center;padding:8px;border:1.5px solid var(--line);border-radius:14px;background:#fff;cursor:pointer;transition:border-color .15s,background .15s}
+.pick input{position:absolute;opacity:0;pointer-events:none}
+.pick img,.pick .noimg{width:64px;height:44px;border-radius:9px;object-fit:cover;background:var(--rose)}
+.pick span{font-size:14px;line-height:1.3;color:var(--ink)}
+.pick small{display:block;color:var(--muted);font-size:12.5px;margin-top:2px}
+.pick:hover{border-color:#cfaea4}
+.pick.on{border-color:var(--plum);background:var(--blush)}
+.pick.on::after{content:"";position:absolute;right:8px;top:8px;width:20px;height:20px;border-radius:50%;background:var(--plum) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M6.5 12.5l3.5 3.5 7.5-8' fill='none' stroke='%23fffcfa' stroke-width='2.4' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E") center/14px no-repeat}
+.pick.off{opacity:.45;cursor:not-allowed}
+.fields{display:grid;grid-template-columns:1fr 1fr;gap:14px 16px;margin-top:24px}
+.fields .full{grid-column:1/-1}
+@media (max-width:560px){.fields{grid-template-columns:1fr}}
+.fields label{display:grid;gap:6px;font-size:14.5px;font-weight:500;color:var(--ink)}
+.fields label i{font-style:normal;font-weight:400;color:var(--muted)}
+.fields input,.fields select,.fields textarea{font:400 16px/1.4 var(--sans);padding:12px 14px;border:1px solid #dbc6be;border-radius:12px;background:#fff;color:var(--ink);width:100%}
+.fields textarea{min-height:96px;resize:vertical}
+.fields input:focus,.fields select:focus,.fields textarea:focus{outline:2px solid var(--gold);outline-offset:1px;border-color:var(--gold)}
+.hp{position:absolute;left:-9999px;width:1px;height:1px;overflow:hidden}
+.f-actions{display:flex;flex-wrap:wrap;gap:14px;align-items:center;margin-top:24px}
+.f-actions p{font-size:14px;color:var(--muted);max-width:42ch}
+.f-error{margin-top:14px;color:#9b2c4a;font-size:15px;font-weight:500}
+.f-error:empty{display:none}
+.f-done{text-align:center;padding:clamp(40px,6vw,64px) clamp(24px,4vw,44px)}
+.f-done .tick{width:72px;height:72px;border-radius:50%;margin:0 auto 22px;display:grid;place-items:center;background:var(--gold-pale);color:var(--gold)}
+.f-done .tick svg{width:36px;height:36px}
+.f-done h3{font-size:clamp(32px,4vw,42px)}
+.f-done p{margin:14px auto 0;color:var(--body);max-width:46ch}
+.f-done .f-actions{justify-content:center}
+#req-dialog{width:min(820px,calc(100vw - 32px))}
+#req-dialog > div{position:relative}
+#privacy-dialog{width:min(720px,calc(100vw - 32px))}
+.pv{position:relative;padding:clamp(26px,4vw,44px)}
+.pv h3{font-size:clamp(30px,3.6vw,40px);padding-right:44px}
+.pv > p{margin-top:12px;color:var(--body)}
+.pv a{color:var(--plum)}
+.pv dl{margin:22px 0 0;display:grid;grid-template-columns:150px 1fr;gap:14px 20px}
+.pv dt{font-weight:600;color:var(--plum)}
+.pv dd{margin:0;color:var(--body)}
+@media (max-width:560px){.pv dl{grid-template-columns:1fr;gap:4px}.pv dd{margin-bottom:12px}}
+
+/* pricing */
+.pricing{background:var(--porcelain)}
+.offer{display:grid;grid-template-columns:1.35fr 1fr;gap:26px;align-items:stretch}
+.bundle{position:relative;border-radius:28px;padding:clamp(32px,4vw,48px);background:radial-gradient(90% 120% at 100% 0%, #6e2a4d 0%, var(--plum) 60%);color:var(--ivory);box-shadow:0 40px 80px -40px rgba(58,17,41,.65);display:flex;flex-direction:column;gap:22px;overflow:hidden}
+.bundle .tag{align-self:flex-start;background:var(--gold-soft);color:var(--plum);font:600 13.5px/1 var(--sans);padding:9px 14px;border-radius:999px}
+.bundle h3{color:var(--ivory);font-size:clamp(34px,3.6vw,44px)}
+.bundle .amt{font:500 clamp(72px,8vw,96px)/1 var(--serif);color:var(--ivory);letter-spacing:-.01em}
+.bundle .amt small{font:400 16px/1 var(--sans);color:#ead8e0;margin-left:10px;letter-spacing:0}
+.contents{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.contents div{background:rgba(255,252,250,.08);border:1px solid rgba(231,207,166,.3);border-radius:var(--r-md);padding:18px 20px}
+.contents b{display:block;font:500 40px/1 var(--serif);color:var(--gold-soft)}
+.contents span{display:block;margin-top:6px;font-size:15.5px;color:#f1e3e9}
+.bundle ul{margin:0;padding:0;list-style:none;display:grid;gap:10px;font-size:16px;color:#f1e3e9}
+.bundle li{padding-left:28px;position:relative}
+.bundle li svg{position:absolute;left:0;top:4px;width:18px;height:18px;color:var(--gold-soft)}
+.bundle .btns{display:flex;flex-wrap:wrap;gap:12px;margin-top:6px}
+.five{border-radius:28px;padding:clamp(32px,4vw,44px);background:var(--ivory);border:1px solid var(--line);display:flex;flex-direction:column;gap:18px;box-shadow:var(--shadow)}
+.five h3{font-size:clamp(32px,3.2vw,40px)}
+.five .amt{font:500 72px/1 var(--serif);color:var(--plum)}
+.five .amt small{font:400 16px/1 var(--sans);color:var(--body);margin-left:10px}
+.five p{color:var(--body)}
+.five .btn{margin-top:auto;align-self:flex-start}
+.five-list{margin:0;padding:0;list-style:none;display:grid;gap:10px;font-size:16px;color:var(--ink)}
+.five-list li{padding-left:28px;position:relative}
+.five-list svg{position:absolute;left:0;top:4px;width:18px;height:18px;color:var(--gold)}
+@media (max-width:960px){.offer{grid-template-columns:1fr}}
+@media (max-width:480px){.contents{grid-template-columns:1fr}}
+.tiers{display:grid;grid-template-columns:1fr 1.12fr 1fr;gap:22px;align-items:stretch}
+.tier{border-radius:28px;padding:38px 32px;background:var(--ivory);border:1px solid var(--line);display:flex;flex-direction:column;gap:16px;box-shadow:var(--shadow)}
+.tier h3{font-size:34px}
+.tier-sub{color:var(--body);font-size:15.5px;margin-top:-6px}
+.tier .amt{font:500 68px/1 var(--serif);color:var(--plum);margin:6px 0 4px}
+.tier .amt small{font:400 15px/1 var(--sans);color:var(--body);margin-left:8px}
+.tier ul{margin:0 0 8px;padding:0;list-style:none;display:grid;gap:11px;font-size:15.5px;color:var(--ink)}
+.tier li{padding-left:28px;position:relative}
+.tier li svg{position:absolute;left:0;top:4px;width:18px;height:18px;color:var(--gold)}
+.tier .btn{margin-top:auto}
+.tier.best{background:radial-gradient(90% 120% at 100% 0%, #6e2a4d 0%, var(--plum) 60%);border-color:transparent;color:var(--ivory);transform:translateY(-14px);box-shadow:0 40px 80px -40px rgba(58,17,41,.7)}
+.tier.best h3,.tier.best .amt{color:var(--ivory)}
+.tier.best .tier-sub,.tier.best .amt small{color:#ecdbe2}
+.tier.best ul{color:#f1e3e9}
+.tier.best li svg{color:var(--gold-soft)}
+.tier.excl{background:radial-gradient(90% 120% at 100% 0%, var(--emerald-2) 0%, var(--emerald) 60%, var(--emerald-ink) 100%);border-color:transparent;color:var(--ivory)}
+.tier.excl h3,.tier.excl .amt{color:var(--ivory)}
+.tier.excl .tier-sub,.tier.excl .amt small{color:#d4e6df}
+.tier.excl ul{color:#e6f1ed}
+.tier.excl li svg{color:var(--gold-soft)}
+.tier.excl .btn-line{border-color:rgba(255,252,250,.55);color:var(--ivory)}
+.tier.excl .btn-line:hover{background:rgba(255,252,250,.1);border-color:var(--ivory)}
+.tier .tag-soft{background:var(--blush)!important;color:var(--plum)!important}
+.tier .tag{align-self:flex-start;background:var(--gold-soft);color:var(--plum);font:600 13.5px/1 var(--sans);padding:9px 14px;border-radius:999px}
+@media (max-width:1000px){.tiers{grid-template-columns:1fr;max-width:560px;margin:0 auto}.tier.best{transform:none;order:-1}}
+.calc{margin-top:36px;display:grid;grid-template-columns:auto 1fr;gap:36px;align-items:center;padding:28px 34px;border-radius:var(--r-lg);background:var(--gold-pale)}
+.calc form{display:flex;flex-wrap:wrap;gap:18px;align-items:end}
+.calc label{display:grid;gap:8px;font-size:14.5px;font-weight:500;color:var(--ink)}
+.calc select,.calc input{font:400 16px var(--sans);padding:12px 14px;border:1px solid #dcc3a1;border-radius:12px;background:var(--ivory);color:var(--ink);min-width:180px}
+.calc output{font:500 clamp(24px,2.5vw,30px)/1.3 var(--serif);color:var(--plum)}
+@media (max-width:820px){.calc{grid-template-columns:1fr}}
+
+/* licence */
+.licence-sec{background:var(--blush)}
+.licence{display:grid;grid-template-columns:1.2fr 1fr;gap:24px}
+.lic{border-radius:var(--r-lg);padding:38px 34px}
+.lic.yes{background:var(--ivory);box-shadow:var(--shadow)}
+.lic.no{background:rgba(255,252,250,.5);border:1px solid #e3c9c1}
+.lic h3{font-size:33px;margin-bottom:22px}
+.lic ul{margin:0;padding:0;list-style:none;display:grid;gap:14px}
+.lic li{padding-left:34px;position:relative;color:var(--ink)}
+.lic li svg{position:absolute;left:0;top:4px;width:19px;height:19px}
+.lic.yes svg{color:var(--gold)}
+.lic.no svg{color:#a8627a}
+@media (max-width:820px){.licence{grid-template-columns:1fr}}
+
+/* steps */
+.steps{display:grid;grid-template-columns:repeat(4,1fr);gap:22px;margin:0;padding:0;list-style:none;counter-reset:s}
+.steps li{counter-increment:s;background:var(--ivory);border:1px solid var(--line);border-radius:var(--r-lg);padding:30px 26px}
+.steps li::before{content:counter(s);display:grid;place-items:center;width:46px;height:46px;border-radius:50%;background:var(--plum);color:var(--gold-soft);font:500 24px/1 var(--serif);margin-bottom:20px}
+.steps h3{font-size:27px;margin-bottom:8px}
+.steps p{font-size:16px;color:var(--body)}
+@media (max-width:960px){.steps{grid-template-columns:1fr 1fr}}
+@media (max-width:540px){.steps{grid-template-columns:1fr}}
+
+/* faq */
+.faq-sec{background:var(--ivory)}
+.faq-wrap{display:grid;grid-template-columns:.8fr 1.2fr;gap:clamp(32px,6vw,96px);align-items:start}
+.faq details{border-bottom:1px solid var(--line)}
+.faq details:first-child{border-top:1px solid var(--line)}
+.faq summary{list-style:none;cursor:pointer;display:flex;justify-content:space-between;align-items:center;gap:24px;padding:24px 0;font:500 25px/1.25 var(--serif);color:var(--plum)}
+.faq summary::-webkit-details-marker{display:none}
+.faq summary::after{content:"";flex:none;width:11px;height:11px;border-right:1.6px solid var(--gold);border-bottom:1.6px solid var(--gold);transform:rotate(45deg) translate(-3px,-3px);transition:transform .25s}
+.faq details[open] summary::after{transform:rotate(-135deg) translate(-3px,-3px)}
+.faq .a{padding:0 0 26px;color:var(--body);max-width:64ch}
+.faq .a a,.faq-wrap .lede a{color:var(--plum)}
+@media (max-width:900px){.faq-wrap{grid-template-columns:1fr}}
+
+/* cta */
+.cta{background:radial-gradient(90% 140% at 0% 100%, #6e2a4d 0%, var(--plum) 60%);color:var(--ivory)}
+.cta-grid{display:grid;grid-template-columns:1.3fr 1fr;gap:56px;align-items:center}
+.cta h2{color:var(--ivory)}
+.cta p{color:#efdfe6;margin-top:20px;max-width:50ch}
+.cta-actions{display:grid;gap:14px;justify-items:start}
+.cta-actions .mail{font-size:15.5px;color:#e3cfd8;margin-top:6px}
+.cta-actions .mail a{color:var(--gold-soft)}
+@media (max-width:860px){.cta-grid{grid-template-columns:1fr}}
+footer{background:#2a0c1d;color:#dcc7d0;font-size:15px;padding:56px 0 26px}
+footer a{color:var(--ivory)}
+.foot{display:grid;grid-template-columns:1.6fr 1fr;gap:40px}
+.foot-brand{font:500 28px/1.1 var(--serif);color:var(--ivory)}
+.foot-brand span{font:400 14px/1 var(--sans);color:var(--gold-soft);margin-left:8px}
+.foot-note{margin-top:14px;max-width:62ch;line-height:1.7}
+.foot-side{display:grid;gap:12px;align-content:start}
+.foot-links{display:flex;flex-wrap:wrap;gap:8px 18px}
+.foot-link{background:none;border:0;padding:0;cursor:pointer;color:var(--ivory);text-decoration:underline;font:inherit}
+.foot-base{margin-top:36px;padding-top:20px;border-top:1px solid rgba(231,207,166,.18);font-size:14px;color:#bfa8b3}
+@media (max-width:760px){.foot{grid-template-columns:1fr}}
+
+/* interaction layer */
+.progress{position:absolute;left:0;bottom:-1px;height:2px;width:100%;transform-origin:0 50%;transform:scaleX(0);background:linear-gradient(90deg,var(--gold-soft),var(--gold))}
+.top nav a:not(.btn){position:relative;padding:6px 0}
+.top nav a:not(.btn)::after{content:"";position:absolute;left:0;right:0;bottom:0;height:1.5px;background:var(--gold-soft);transform:scaleX(0);transform-origin:0 50%;transition:transform .3s}
+.top nav a:not(.btn):hover::after,.top nav a.active::after{transform:scaleX(1)}
+.top nav a.active{color:var(--ivory)}
+.card{cursor:pointer;transition:transform .35s cubic-bezier(.2,.7,.2,1),box-shadow .35s}
+.card:hover{transform:translateY(-6px);box-shadow:0 2px 4px rgba(58,17,41,.05),0 34px 60px -30px rgba(58,17,41,.45)}
+.card-img::after{content:"View curriculum";position:absolute;left:50%;bottom:16px;transform:translate(-50%,8px);opacity:0;background:rgba(58,17,41,.88);color:var(--ivory);font:500 14px/1 var(--sans);padding:10px 16px;border-radius:999px;transition:opacity .3s,transform .3s;pointer-events:none;white-space:nowrap}
+.card:hover .card-img::after{opacity:1;transform:translate(-50%,0)}
+.card.fade{animation:cardIn .45s cubic-bezier(.2,.7,.2,1) both}
+@keyframes cardIn{from{opacity:0;transform:translateY(12px) scale(.98)}to{opacity:1;transform:none}}
+.tier,.benefit,.steps li{transition:transform .35s cubic-bezier(.2,.7,.2,1),box-shadow .35s}
+@media (hover:hover) and (min-width:1001px){.tier:hover{transform:translateY(-6px)}.tier.best:hover{transform:translateY(-20px)}}
+@media (hover:hover){.benefit:hover,.steps li:hover{transform:translateY(-4px);box-shadow:var(--shadow)}}
+.btn{will-change:transform}
+.btn:hover{transform:translateY(-1px)}
+.mosaic figure{transition:transform .6s cubic-bezier(.2,.7,.2,1)}
+.mosaic figure:hover{transform:scale(1.015)}
+dialog[open]{animation:dlgIn .35s cubic-bezier(.2,.7,.2,1)}
+dialog[open]::backdrop{animation:fadeIn .3s ease}
+@keyframes dlgIn{from{opacity:0;transform:translateY(16px) scale(.98)}to{opacity:1;transform:none}}
+@keyframes fadeIn{from{opacity:0}to{opacity:1}}
+.faq details[open] .a{animation:fadeIn .35s ease}
+.to-top{position:fixed;right:20px;bottom:20px;z-index:30;width:50px;height:50px;border-radius:50%;border:1px solid rgba(231,207,166,.5);background:var(--plum);color:var(--gold-soft);display:grid;place-items:center;cursor:pointer;box-shadow:0 16px 30px -12px rgba(58,17,41,.6);opacity:0;transform:translateY(12px);pointer-events:none;transition:opacity .3s,transform .3s}
+.to-top.show{opacity:1;transform:none;pointer-events:auto}
+.to-top svg{width:20px;height:20px}
+.js .reveal{opacity:0;transform:translateY(22px);transition:opacity .8s cubic-bezier(.2,.7,.2,1),transform .8s cubic-bezier(.2,.7,.2,1)}
+.js .reveal.in{opacity:1;transform:none}
+@media (prefers-reduced-motion:reduce){.js .reveal{opacity:1;transform:none}.card:hover,.tier:hover,.ex-card:hover{transform:none}}
+
+@media (prefers-reduced-motion:no-preference){
+  .hero h1,.hero .lede,.hero-ctas,.trust,.mosaic{animation:rise .9s cubic-bezier(.2,.7,.2,1) both}
+  .hero .lede{animation-delay:.1s}.hero-ctas{animation-delay:.18s}.trust{animation-delay:.26s}.mosaic{animation-delay:.08s}
+  @keyframes rise{from{opacity:0;transform:translateY(16px)}to{opacity:1;transform:none}}
+}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{transition:none!important;animation:none!important}}
+</style>
 </head>
 <body>
-  <header class="site-nav">
-    <a class="brand" href="#top" aria-label="Beauty Learning Partnership home">
-      <span class="brand-mark">B</span>
-      <span>Janets<br><small>Partnership</small></span>
-    </a>
-    <a class="nav-cta" href="#choose">Explore your options <span>↘</span></a>
-  </header>
+<script>document.documentElement.classList.add('js')</script>
 
-  <main id="top">
-    <section class="hero">
-      <div class="hero-orb orb-one"></div><div class="hero-orb orb-two"></div>
-      <div class="hero-copy">
-        <p class="eyebrow">A tailored proposal for your beauty education vision</p>
-        <h1>Build a beauty learning brand <em>your way.</em></h1>
-        <p class="hero-lead">Choose independent ownership with a curated PLR collection, or scale learner access through a fully managed business dashboard.</p>
-        <a class="primary-button" href="#choose">Discover both pathways <span>↓</span></a>
-      </div>
-      <div class="hero-visual">
-        <img src="./beauty-learning-hero-v2.png" alt="A refined beauty education workspace with a digital learning platform, course materials and professional beauty tools" />
-        <div class="floating-note note-one"><b>21</b><span>beauty courses</span></div>
-        <div class="floating-note note-two"><b>2</b><span>flexible models</span></div>
-      </div>
-    </section>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <symbol id="i-clock" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9" fill="none" stroke="currentColor" stroke-width="1.6"/><path d="M12 7v5l3 2" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></symbol>
+  <symbol id="i-list" viewBox="0 0 24 24"><path d="M8 6h12M8 12h12M8 18h12" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/><circle cx="4" cy="6" r="1.2" fill="currentColor"/><circle cx="4" cy="12" r="1.2" fill="currentColor"/><circle cx="4" cy="18" r="1.2" fill="currentColor"/></symbol>
+  <symbol id="i-exam" viewBox="0 0 24 24"><path d="M7 3h10v18H7z" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/><path d="M10 8h4M10 12h4M10 16h2" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></symbol>
+  <symbol id="i-check" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10" fill="none" stroke="currentColor" stroke-width="1.5"/><path d="M7.5 12.5l3 3 6-6.5" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+  <symbol id="i-x" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10" fill="none" stroke="currentColor" stroke-width="1.5"/><path d="M9 9l6 6M15 9l-6 6" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></symbol>
+  <symbol id="i-spark" viewBox="0 0 24 24"><path d="M12 2.5l1.9 6.1 6.1 1.9-6.1 1.9L12 18.5l-1.9-6.1L4 10.5l6.1-1.9z" fill="currentColor"/></symbol>
+</svg>
 
-    <section class="choice-section" id="choose">
-      <div class="section-heading">
-        <p class="eyebrow">Choose your partnership model</p>
-        <h2>Two beautiful ways to begin.</h2>
-        <p>Each path is designed around a different kind of growth. Select one to explore the full proposal.</p>
-      </div>
-      <div class="choice-grid">
-        <button class="choice-card plr-choice" data-model="plr">
-          <span class="choice-number">01</span>
-          <span class="choice-icon">✦</span>
-          <span class="choice-kicker">Own & independently deliver</span>
-          <strong>Private Label Rights</strong>
-          <span class="choice-summary">A curated 12-course beauty collection for your own brand and website.</span>
-          <span class="choice-price"><small>One-time investment</small>£2,000</span>
-          <span class="choice-link">Explore PLR <i>→</i></span>
-        </button>
-        <button class="choice-card dashboard-choice" data-model="dashboard">
-          <span class="choice-number">02</span>
-          <span class="choice-icon">◇</span>
-          <span class="choice-kicker">Manage & scale learner access</span>
-          <strong>Business Dashboard</strong>
-          <span class="choice-summary">A managed learning experience with all 21 unique beauty courses.</span>
-          <span class="choice-price"><small>Volume licences from</small>£5</span>
-          <span class="choice-link">Explore dashboard <i>→</i></span>
-        </button>
-      </div>
-    </section>
-    <section id="experience" aria-live="polite"></section>
-  </main>
+<header class="top">
+  <div class="progress" id="progress"></div>
+  <div class="wrap">
+    <a class="brand" href="#top"><b>Beauty Learning Partnership</b><span>by Janets</span></a>
+    <nav aria-label="Sections">
+      <a href="#exclusive">Exclusive courses</a>
+      <a href="#collection">Collection</a>
+      <a href="#pricing">Pricing</a>
+      <a href="#faq">Questions</a>
+      <a class="btn btn-gold" href="https://calendar.app.google/HN6ooYgpkTV29ktY9" target="_blank" rel="noopener">Book a meeting</a>
+    </nav>
+  </div>
+</header>
 
-  <footer><span>Beauty Learning Partnership</span><span>Curated for tomorrow's beauty professionals.</span></footer>
-  <script src="script.js"></script>
+<main id="top">
+  <section class="hero" aria-labelledby="hero-title">
+    <div class="wrap">
+      <div class="hero-grid">
+        <div>
+          <h1 id="hero-title">A professional beauty course library, <em>under your own name.</em></h1>
+          <p class="lede">License seventeen ready-made online courses, including five exclusive new treatment courses. Rebrand them, host them on your platform and keep every pound your students pay.</p>
+          <div class="hero-ctas">
+            <a class="btn btn-gold" href="#collection">Explore the courses</a>
+            <a class="btn btn-light" href="#pricing">View pricing</a>
+          </div>
+          <div class="trust">
+            <span><svg aria-hidden="true"><use href="#i-check"/></svg>One-time licence</span>
+            <span><svg aria-hidden="true"><use href="#i-check"/></svg>No per-learner fees</span>
+            <span><svg aria-hidden="true"><use href="#i-check"/></svg>Fully rebrandable</span>
+          </div>
+        </div>
+        <div class="mosaic">
+          <figure><img src="https://ibeautymakeup.co.uk/wp-content/uploads/2022/01/Complete-Makeup-Masterclass.png" style="object-position:36% 50%" alt="Makeup artist applying blush with a brush" onerror="this.parentNode.classList.add('img-fail')"></figure>
+          <figure><img src="https://ibeautymakeup.co.uk/wp-content/uploads/2022/02/Gel-Manicure-and-Nail-Technician-Online-Training.png" alt="Nail technician applying gel polish" onerror="this.parentNode.classList.add('img-fail')"></figure>
+          <figure><img src="https://ibeautymakeup.co.uk/wp-content/uploads/2020/11/Skin-Care-Treatment.png" alt="Facial massage during a skin treatment" onerror="this.parentNode.classList.add('img-fail')"></figure>
+          <div class="badge"><b>5</b><span>Exclusive courses, newly made for our partners</span></div>
+        </div>
+      </div>
+      <div class="facts">
+        <dl>
+          <div><dt>Professional courses</dt><dd>17</dd></div>
+          <div><dt>Exclusive new courses</dt><dd>5</dd></div>
+          <div><dt>Hours of video in the published courses</dt><dd id="fact-hours">30+</dd></div>
+          <div><dt>Fee per learner</dt><dd>£0</dd></div>
+        </dl>
+      </div>
+    </div>
+  </section>
+
+  <section aria-labelledby="ben-title">
+    <div class="wrap">
+      <div class="sec-head">
+        <h2 id="ben-title">Your academy's courses, from day one</h2>
+        <p class="lede">A private label licence gives you the courses themselves, not a link to ours. Your students learn with your academy from enrolment to certificate.</p>
+      </div>
+      <div class="benefits">
+        <article class="benefit"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 20l4-1 11-11-3-3L5 16z"/><path d="M14 6l3 3"/></svg></div><h3>Your brand</h3><p>Rename every course, add your logo and edit the learning materials to match your academy.</p></article>
+        <article class="benefit"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="4" width="18" height="13" rx="2"/><path d="M8 21h8M12 17v4"/></svg></div><h3>Your platform</h3><p>Upload to your own website or learning platform. Your students never see our name.</p></article>
+        <article class="benefit"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="9"/><path d="M14.5 8.5c-.6-.9-1.5-1.3-2.6-1.3-1.7 0-2.6 1-2.6 2.4 0 3 4.5 1.6 4.5 4.6 0 1.4-1 2.4-2.8 2.4-1.2 0-2.2-.5-2.8-1.4M12 5.5v1.7M12 16.8v1.7"/></svg></div><h3>Your income</h3><p>Set your own prices and keep 100% of every enrolment. There's no revenue share on PLR courses.</p></article>
+        <article class="benefit"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 3l2.6 5.3 5.9.9-4.3 4.1 1 5.8L12 16.4 6.8 19.1l1-5.8L3.5 9.2l5.9-.9z"/></svg></div><h3>Pay once</h3><p>A single licence fee. No renewals, no subscriptions and no charge per learner, however many you enrol.</p></article>
+      </div>
+    </div>
+  </section>
+
+  <section class="collection" id="collection" aria-labelledby="coll-title">
+    <div class="wrap">
+      <div class="coll-head">
+        <div class="sec-head">
+          <h2 id="coll-title">The core collection</h2>
+          <p class="lede">Twelve established courses across makeup, skin, hair and nails. Open any course to see every lesson and its running time.</p>
+        </div>
+        <div class="filters" role="group" aria-label="Filter courses">
+          <button type="button" data-f="all" aria-pressed="true">All 12</button>
+          <button type="button" data-f="makeup" aria-pressed="false">Makeup</button>
+          <button type="button" data-f="skin" aria-pressed="false">Skin and facials</button>
+          <button type="button" data-f="hair" aria-pressed="false">Hair and nails</button>
+        </div>
+      </div>
+      <div class="grid" id="grid"></div>
+      <p class="coll-note">Running times are the total video and assessment time for each course. All courses are delivered online in English.</p>
+    </div>
+  </section>
+
+  <section class="exclusive" id="exclusive" aria-labelledby="ex-title">
+    <div class="wrap">
+      <div class="sec-head">
+        <span class="ex-label"><svg width="14" height="14" aria-hidden="true"><use href="#i-spark"/></svg>Exclusive to partners</span>
+        <h2 id="ex-title">Five exclusive courses, newly made</h2>
+        <p class="lede">Advanced treatment courses produced for our partner academies. They aren't published anywhere else, so your students won't find them on other course sites.</p>
+      </div>
+      <div class="ex-grid" id="ex-grid"></div>
+      <p class="ex-note">Available as their own five-course licence or as part of the full bundle. Ask us for the full outline and a sample lesson of any of them.</p>
+    </div>
+  </section>
+
+  <section class="pricing" id="pricing" aria-labelledby="pricing-title">
+    <div class="wrap">
+      <div class="sec-head">
+        <h2 id="pricing-title">Choose your licence</h2>
+        <p class="lede">Every option is a one-time, non-exclusive licence with unlimited learners and no ongoing fees.</p>
+      </div>
+      <div class="tiers">
+        <article class="tier">
+          <span class="tag tag-soft">Your choice</span>
+          <h3>Any five courses</h3>
+          <p class="tier-sub">Five core courses of your choice</p>
+          <div class="amt">£795<small>one-time</small></div>
+          <ul>
+            <li><svg aria-hidden="true"><use href="#i-check"/></svg>Choose any five of the twelve core courses</li>
+            <li><svg aria-hidden="true"><use href="#i-check"/></svg>About £159 a course</li>
+            <li><svg aria-hidden="true"><use href="#i-check"/></svg>Ideal for adding a focused set of courses</li>
+          </ul>
+          <button class="btn btn-line" type="button" data-req="five">Choose your five</button>
+        </article>
+        <article class="tier best">
+          <span class="tag">Best value</span>
+          <h3>The full bundle</h3>
+          <p class="tier-sub">All 17 courses: 12 core and 5 exclusive</p>
+          <div class="amt">£1,990<small>one-time</small></div>
+          <ul>
+            <li><svg aria-hidden="true"><use href="#i-check"/></svg>Every course in the collection, including all five exclusive courses</li>
+            <li><svg aria-hidden="true"><use href="#i-check"/></svg>About £117 a course</li>
+            <li><svg aria-hidden="true"><use href="#i-check"/></svg>A complete beauty catalogue for your academy in one step</li>
+          </ul>
+          <a class="btn btn-gold" href="https://calendar.app.google/HN6ooYgpkTV29ktY9" target="_blank" rel="noopener">Book a meeting</a>
+        </article>
+        <article class="tier excl">
+          <span class="tag">Exclusive</span>
+          <h3>The exclusive five</h3>
+          <p class="tier-sub">Our five newly made treatment courses</p>
+          <div class="amt">£895<small>one-time</small></div>
+          <ul>
+            <li><svg aria-hidden="true"><use href="#i-check"/></svg>Hydrofacial, Microdermabrasion, Electrical Facials, Russian Semi-Permanent Lashes and Henna Brows</li>
+            <li><svg aria-hidden="true"><use href="#i-check"/></svg>Not published anywhere else</li>
+            <li><svg aria-hidden="true"><use href="#i-check"/></svg>Advanced treatments your students won't find elsewhere</li>
+          </ul>
+          <button class="btn btn-line" type="button" data-req="exclusive">Ask about these five</button>
+        </article>
+      </div>
+
+      <div class="calc">
+        <form id="calc" onsubmit="return false">
+          <label>Licence
+            <select id="pkg">
+              <option value="1990">The full bundle, £1,990</option>
+              <option value="795">Any five courses, £795</option>
+              <option value="895">The exclusive five, £895</option>
+            </select>
+          </label>
+          <label>Your price per enrolment (£)
+            <input id="fee" type="number" min="1" step="1" value="99" inputmode="numeric">
+          </label>
+        </form>
+        <output id="calc-out" for="pkg fee" aria-live="polite"></output>
+      </div>
+    </div>
+  </section>
+
+  <section class="licence-sec" id="licence" aria-labelledby="licence-title">
+    <div class="wrap">
+      <div class="sec-head">
+        <h2 id="licence-title">What your licence covers</h2>
+        <p class="lede">A summary of the main terms. The full terms are set out in the licence agreement you sign.</p>
+      </div>
+      <div class="licence">
+        <div class="lic yes">
+          <h3>Included</h3>
+          <ul>
+            <li><svg><use href="#i-check"/></svg>Selling the courses under your own brand, at your own prices</li>
+            <li><svg><use href="#i-check"/></svg>Renaming the courses and editing the learning materials</li>
+            <li><svg><use href="#i-check"/></svg>Hosting them on your own website or learning platform</li>
+            <li><svg><use href="#i-check"/></svg>Using them within your existing training programmes</li>
+            <li><svg><use href="#i-check"/></svg>Putting them forward to your own accreditation provider</li>
+            <li><svg><use href="#i-check"/></svg>Enrolling as many learners as you like, with no extra fees</li>
+          </ul>
+        </div>
+        <div class="lic no">
+          <h3>Not included</h3>
+          <ul>
+            <li><svg><use href="#i-x"/></svg>Reselling or transferring the licence or the PLR rights</li>
+            <li><svg><use href="#i-x"/></svg>Listing the courses on Udemy, Skillshare, Coursera, Uthena or YouTube</li>
+            <li><svg><use href="#i-x"/></svg>Sole rights: the licence is non-exclusive, so other partner academies may license the same courses</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section aria-labelledby="steps-title">
+    <div class="wrap">
+      <div class="sec-head"><h2 id="steps-title">From first meeting to first student</h2></div>
+      <ol class="steps">
+        <li><h3>A short meeting</h3><p>We talk through your academy, your students and which courses fit best.</p></li>
+        <li><h3>Choose and sign</h3><p>Choose your courses, sign the licence agreement and pay the one-time fee.</p></li>
+        <li><h3>Receive your courses</h3><p>We send the course videos and learning materials for every course you license.</p></li>
+        <li><h3>Launch as your own</h3><p>Add your branding, upload to your platform and start enrolling students.</p></li>
+      </ol>
+    </div>
+  </section>
+
+  <section class="faq-sec" id="faq" aria-labelledby="faq-title">
+    <div class="wrap faq-wrap">
+      <div class="sec-head">
+        <h2 id="faq-title">Questions academies ask</h2>
+        <p class="lede">Can't find your answer? Email <a href="mailto:business@janets.org.uk">business@janets.org.uk</a> and we'll get back to you.</p>
+      </div>
+      <div class="faq">
+        <details><summary>What exactly do I receive?</summary><div class="a"><p>The video lessons and accompanying learning materials for each course you license. We confirm the full file list in your licence agreement before you pay.</p></div></details>
+        <details><summary>Can I see a sample lesson first?</summary><div class="a"><p>Yes. <button class="inline-link" type="button" data-req="sample">Request a sample</button> for the course you're most interested in and we'll send a sample, so you can judge the quality for your students.</p></div></details>
+        <details><summary>What makes the five courses exclusive?</summary><div class="a"><p>They're newly produced and haven't been published anywhere else. They're only available to academies that license them from us, either on their own or in the full bundle, so your students won't find them on other course sites.</p></div></details>
+        <details><summary>How long are the courses, and what language are they in?</summary><div class="a"><p>The core courses run from about one to seven hours each, over 40 hours in total. Every lesson and its running time is listed in the collection above. All courses are in English.</p></div></details>
+        <details><summary>Are the courses accredited?</summary><div class="a"><p>The licence covers the course content, not a qualification, and the courses are not Ofqual-regulated qualifications. You're welcome to put them forward to your own accreditation or CPD provider and issue certificates under your academy's name.</p></div></details>
+        <details><summary>Are the treatment courses practical training?</summary><div class="a"><p>They are online, video-based courses. They work well as the theory and knowledge part of your training, alongside the hands-on practice and assessment you already run.</p></div></details>
+        <details><summary>Can I change the courses?</summary><div class="a"><p>Yes. You can rename the courses, add your branding and edit the learning materials so they fit your programmes.</p></div></details>
+        <details><summary>How do I pay, and are there ongoing costs?</summary><div class="a"><p>A single one-time payment. There are no renewals, subscriptions or per-learner fees. Payment details are set out in your licence agreement.</p></div></details>
+        <details><summary>I don't have a learning platform yet. Can you help?</summary><div class="a"><p>Yes. We can set up and host a learning platform for you. Ask us about it in your meeting.</p></div></details>
+        <details><summary>Do you work with academies outside the UK?</summary><div class="a"><p>Yes. We license the collection to beauty academies and training providers internationally.</p></div></details>
+        <details><summary>Are there other ways to work together?</summary><div class="a"><p>Yes. Alongside PLR, we run a partner programme that lets you earn from courses beyond the ones you license, with very little to manage. We'll walk you through it in your meeting.</p></div></details>
+      </div>
+    </div>
+  </section>
+
+  <section class="cta" id="contact" aria-labelledby="cta-title">
+    <div class="wrap cta-grid">
+      <div>
+        <h2 id="cta-title">Let's build your course catalogue</h2>
+        <p>A short meeting is usually enough to choose the right courses and answer anything this page doesn't. Pick a time that suits you, or ask for a sample lesson first.</p>
+      </div>
+      <div class="cta-actions">
+        <a class="btn btn-gold" href="https://calendar.app.google/HN6ooYgpkTV29ktY9" target="_blank" rel="noopener">Book a meeting</a>
+        <button class="btn btn-light" type="button" data-req="sample"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M10 8.8v6.4l5.2-3.2z" fill="currentColor"/></svg>Request a free sample lesson</button>
+        <p class="mail">Or email <a href="mailto:business@janets.org.uk">business@janets.org.uk</a></p>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap foot">
+    <div class="foot-main">
+      <p class="foot-brand">Beauty Learning Partnership <span>by Janets</span></p>
+      <p class="foot-note">This page is a brochure to help you explore and understand the Beauty PLR programme provided by Janets. It is a commercial overview, not a contract: the final scope, files and licence terms are confirmed in your signed licence agreement.</p>
+    </div>
+    <div class="foot-side">
+      <p>Janets<br>3rd Floor, 45 Albemarle Street<br>Mayfair, London W1S 4JL</p>
+      <p><a href="mailto:business@janets.org.uk">business@janets.org.uk</a></p>
+      <p class="foot-links"><button class="foot-link" type="button" data-privacy>How we use your details</button><a href="https://www.janets.org.uk/privacy-policy/" target="_blank" rel="noopener">Privacy policy</a><a href="https://www.janets.org.uk/terms-conditions" target="_blank" rel="noopener">Terms</a></p>
+    </div>
+  </div>
+  <div class="wrap foot-base"><span>© Janets 2026</span></div>
+</footer>
+
+<button class="to-top" id="to-top" type="button" aria-label="Back to top"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 19V5M5.5 11.5L12 5l6.5 6.5"/></svg></button>
+
+<dialog id="course-dialog" aria-labelledby="m-title"><div id="m-content"></div></dialog>
+<dialog id="req-dialog" aria-labelledby="f-title"><div id="f-content"></div></dialog>
+<dialog id="privacy-dialog" aria-labelledby="p-title">
+  <div class="pv">
+    <button class="f-close" type="button" aria-label="Close" data-close-privacy>&times;</button>
+    <h3 id="p-title">How we use your details</h3>
+    <p>This applies to the request forms on this page. Our full <a href="https://www.janets.org.uk/privacy-policy/" target="_blank" rel="noopener">privacy policy</a> has more detail.</p>
+    <dl>
+      <dt>Who we are</dt><dd>Janets, 3rd Floor, 45 Albemarle Street, Mayfair, London W1S 4JL. Contact: <a href="mailto:business@janets.org.uk">business@janets.org.uk</a>.</dd>
+      <dt>What we collect</dt><dd>The details you enter: your name, email, academy or business name, and, if you add them, your website, country, message and chosen courses.</dd>
+      <dt>Why</dt><dd>Only to reply to your request and discuss licensing our courses with you. Our lawful basis is our legitimate interest in answering business enquiries, and taking steps you ask for before a possible contract.</dd>
+      <dt>Where it's kept</dt><dd>In our Google Workspace email and spreadsheets. Google processes it for us under its data protection terms.</dd>
+      <dt>How long</dt><dd>Up to 24 months after our last contact. If you become a customer, we keep records for as long as the law requires.</dd>
+      <dt>What we don't do</dt><dd>We don't sell your details or share them with other companies, and sending a request doesn't sign you up to any mailing list.</dd>
+      <dt>Your rights</dt><dd>You can ask us to show, correct or delete your details, or object to how we use them, by emailing <a href="mailto:business@janets.org.uk">business@janets.org.uk</a>. You can also complain to the Information Commissioner's Office at <a href="https://ico.org.uk" target="_blank" rel="noopener">ico.org.uk</a>.</dd>
+      <dt>Cookies</dt><dd>This page doesn't use analytics, advertising or tracking cookies.</dd>
+    </dl>
+  </div>
+</dialog>
+
+<script>
+const IMG = 'https://ibeautymakeup.co.uk/wp-content/uploads/';
+const CAT = { makeup: 'Makeup', skin: 'Skin and facials', hair: 'Hair and nails' };
+const courses = [{"id":"complete-makeup-masterclass","t":"Complete Makeup Masterclass","cat":"makeup","img":"2022/01/Complete-Makeup-Masterclass.png","ov":"Thirteen core makeup artistry modules, from tools and colour theory to eyes, lips and makeup for different ages, followed by a permanent lip makeup masterclass filmed step by step, from outlining and shading to retouching.","secs":[["Makeup artistry",[["Introduction to makeup artistry",19],["Introduction to contouring",16],["Makeup tools",12],["Foundations and corrections",15],["Colour",16],["Eye makeup",18],["Lip makeup",11],["Different styles of makeup",15],["Eyelash extensions and false eyelashes",17],["Makeup for different ages",13],["Health and safety",12],["Creating a personal makeup kit",12],["Getting started on the job",11]]],["Permanent lip makeup masterclass",[["Introduction",1],["Disinfection and anaesthetic",2],["Cream removal and drawing",16],["White pencil application",5],["Checking with the client",1],["The outline",12],["Lower lip shading",11],["Upper lip shading",14],["Repeat shading, lower lip",9],["Repeat shading, upper lip",10],["The finish: concealing and lip balm",1],["Retouch after one month, lower lip",27],["Retouch after one month, upper lip",26]]]]},{"id":"makeup-artist-training","t":"Makeup Artist Training","cat":"makeup","img":"2020/06/Makeup-Artist-Training.jpg","ov":"A complete grounding in professional makeup: tools, foundations and corrections, colour, eyes and lips, lashes, makeup for different ages, hygiene and how to start working as a makeup artist.","secs":[["Course modules",[["Introduction to makeup artistry",19],["Introduction to contouring",16],["Makeup tools",12],["Foundations and corrections",15],["Colour",16],["Eye makeup",18],["Lip makeup",11],["Different styles of makeup",15],["Eyelash extensions and false eyelashes",17],["Makeup for different ages",13],["Health and safety",12],["Creating a personal makeup kit",12],["Getting started on the job",11]]]]},{"id":"certified-makeup-artist-training","t":"Certified Makeup Artist Training","cat":"makeup","img":"2022/02/Certified-Makeup-Artist-Training.png","ov":"A structured certificate course taking learners from preparation and products through to finished looks for every age, with professional hygiene and kit building along the way.","secs":[["Course modules",[["Introduction to makeup artistry",19],["Introduction to contouring",16],["Makeup tools",12],["Foundations and corrections",15],["Colour",16],["Eye makeup",18],["Lip makeup",11],["Different styles of makeup",15],["Eyelash extensions and false eyelashes",17],["Makeup for different ages",13],["Health and safety",12],["Creating a personal makeup kit",12],["Getting started on the job",11]]]]},{"id":"contouring-foundations-corrections","t":"Makeup Artist: Contouring, Foundations and Corrections","cat":"makeup","img":"2021/01/Makeup-Artist-Contouring-Foundations-and-Corrections.png","ov":"A focused course on complexion work: contouring, choosing and correcting foundation, colour theory, and finishing the eyes and lips.","secs":[["Course modules",[["Introduction to contouring",16],["Makeup tools",12],["Foundations and corrections",11],["Colour",16],["Eye makeup",18],["Lip makeup",11]]]]},{"id":"makeup-tools-hygiene-kit","t":"Makeup Tools, Hygiene and Personal Kit","cat":"makeup","img":"2021/01/Makeup-Tools-Hygiene-Personal-Kit.jpg","ov":"Everything a new makeup artist needs before the first client: choosing tools, hygiene and safety, building a professional kit and getting started on the job.","secs":[["Course modules",[["Makeup tools",12],["Different styles of makeup",15],["Health and safety",12],["Creating a personal makeup kit",12],["Getting started on the job",11]]]]},{"id":"skin-care-facial-spa","t":"Skin Care and Facial Spa","cat":"skin","img":"2022/01/Skin-Care-And-Facial-Spa.png","ov":"Thirteen modules of skin science, from anatomy and nutrients to skin disorders, acne and sun damage, followed by a filmed facial spa treatment: skin analysis, cleansing, steaming, exfoliation, masks, massage and a full facial sequence.","secs":[["Skin care",[["Skin anatomy",26],["Skin nutrients",32],["Skin care for different skin types",26],["Skin care for different ethnicities",24],["Reducing the effects of ageing",29],["Hair removal examined",27],["Diagnosis of skin disease",21],["Eczema",33],["Keratinising and papulosquamous disorders",26],["Skin infections",21],["Remedies for acne-prone skin",25],["Seasonal skin care",25],["The effects of the sun and their remedies",18]]],["Facial spa, filmed treatment",[["Introduction",1],["Analysing different skin types",8],["Preparation",1],["Cleansing, steaming and exfoliation",10],["Cleansing, steaming and exfoliation, overhead view",9],["Mask",4],["Foot massage",6],["Hand massage",3],["Mask removal",10],["Neck facial",7],["Full facial sequence",35],["Wrap-up",1]]]]},{"id":"skin-care-treatment","t":"Skin Care Treatment","cat":"skin","img":"2020/11/Skin-Care-Treatment.png","exam":true,"ov":"In-depth skin science across thirteen modules, from skin anatomy, nutrition and caring for different ethnicities to eczema, infections, acne and sun damage. Ends with a mock and a final exam.","secs":[["Course modules",[["Skin anatomy",26],["Skin nutrients",32],["Skin care for different skin types",26],["Skin care for different ethnicities",24],["Reducing the effects of ageing",29],["Hair removal examined",27],["Diagnosis of skin disease",21],["Eczema",33],["Keratinising and papulosquamous disorders",26],["Skin infections",21],["Remedies for acne-prone skin",25],["Seasonal skin care",25],["The effects of the sun and their remedies",18]]],["Assessment",[["Mock exam",20],["Final exam",20]]]]},{"id":"facial-certificate-course","t":"Facial Certificate Course","cat":"skin","img":"2020/06/Facial-Certificate-Course.png","exam":true,"ov":"The anatomy and physiology behind facial therapy, from cell structure and skin disorders to the bones and circulation of the head and neck, leading into facial treatments and the full facial routine. Ends with a mock and a final exam.","secs":[["Course modules",[["Cell anatomy and structure",14],["Skin conditions and types",37],["Skin diseases and disorders, part 1",13],["Skin diseases and disorders, part 2",37],["Bones of the head, neck and chest",10],["Blood circulation of the head and neck",12],["All about facial treatment",12],["The facial routine",14]]],["Assessment",[["Mock exam",20],["Final exam",20]]]]},{"id":"seasonal-skin-care","t":"Seasonal Skin Care for Different Skin Types","cat":"skin","img":"2021/01/Seasonal-Skin-Care-for-Diffrent-Type-Skin.jpg","ov":"How to adapt skin care to the client and the season: skin types, caring for different ethnicities, ageing, acne-prone skin and seasonal routines.","secs":[["Course modules",[["Skin care for different skin types",26],["Skin care for different ethnicities",24],["Reducing the effects of ageing",29],["Remedies for acne-prone skin",25],["Seasonal skin care",25]]]]},{"id":"beauty-therapy-foundations","t":"Beauty Therapy Foundations","cat":"skin","img":"2023/10/Untitled-design-12-1.png","ov":"A broad introduction to beauty therapy: skin analysis and facials, makeup, nail care, hair care and styling, hair removal and body treatments.","secs":[["Course modules",[["Fundamentals of beauty therapy",20],["Skin analysis and facial treatments",2],["Makeup artistry",19],["Nail care, manicure and pedicure techniques",19],["Hair care and styling",20],["Hair removal and body treatments",17]]]]},{"id":"extension-hair-styling","t":"Extension and Hair Styling","cat":"hair","img":"2020/06/Extension-and-Hair-Styling.png","ov":"Hair science and professional technique: hair structure and treatment, colour and shape, professional washing, tools and styling, men's hair, a 90-minute upstyling module, hair extensions and classic hairstyles.","secs":[["Course modules",[["A detailed look at hair",29],["Learn to treat your hair",33],["Different colours and shapes of hair",18],["Learn professional hair washing",20],["Hairdressing tools",23],["Styling",16],["Men's hair",15],["The world of upstyling",86],["Hair extensions",20],["Classic hairstyles",20]]]]},{"id":"gel-manicure-nail-technician","t":"Gel Manicure and Nail Technician Training","cat":"hair","img":"2022/02/Gel-Manicure-and-Nail-Technician-Online-Training.png","ov":"The essentials of a nail service: hand care, manicure and pedicure, nail art, and gel and shellac application.","secs":[["Course modules",[["General care of hands",22],["Manicure",8],["Pedicure",7],["Nail art",24],["Gel and shellac manicures",17]]]]}];
+const IC = {
+  drop: '<path d="M12 3.2c3.6 4.3 6.2 7.6 6.2 10.8a6.2 6.2 0 0 1-12.4 0c0-3.2 2.6-6.5 6.2-10.8z"/><path d="M9.2 14.6a2.9 2.9 0 0 0 2.6 2.6"/>',
+  gem: '<path d="M7 4h10l4 5.2L12 20.5 3 9.2z"/><path d="M3 9.2h18M9.5 4L8 9.2l4 11.3 4-11.3L14.5 4"/>',
+  bolt: '<circle cx="12" cy="12" r="9.2"/><path d="M13 5.8L8.6 12.9h3.5l-1.1 5.3 4.4-7.1h-3.5z"/>',
+  lash: '<path d="M2.5 13c2.8-3.9 6-5.8 9.5-5.8s6.7 1.9 9.5 5.8"/><path d="M2.5 13c2.8 3.2 6 4.8 9.5 4.8s6.7-1.6 9.5-4.8"/><circle cx="12" cy="12.6" r="2.6"/><path d="M5.6 9.6L4 7.4M8.6 7.9L7.7 5.4M12 7.2V4.6M15.4 7.9l.9-2.5M18.4 9.6L20 7.4"/>',
+  brow: '<path d="M2.8 13.6c3.1-4.6 7.7-6.5 12.1-5.8 2.7.4 4.7 1.7 6.3 3.6-2.1-1-4.2-1.6-6.4-1.7-4.3-.2-8.2 1.3-12 3.9z" fill="currentColor" fill-opacity=".35"/><path d="M6.5 17.2c1.6 1 3.5 1.5 5.5 1.5s3.9-.5 5.5-1.5"/><path d="M9.5 18.4l-.6 1.5M12 18.7v1.6M14.5 18.4l.6 1.5"/>'
+};
+const exclusive = [
+  { t: 'Hydrofacial', ic: 'drop', line: 'Advanced hydrating facial treatment' },
+  { t: 'Microdermabrasion', ic: 'gem', line: 'Skin resurfacing treatment' },
+  { t: 'Electrical Facials', ic: 'bolt', line: 'Electrotherapy for the face' },
+  { t: 'Russian Semi-Permanent Lashes', ic: 'lash', line: 'Volume lash technique' },
+  { t: 'Henna Brows', ic: 'brow', line: 'Brow tinting and shaping' }
+];
+
+const esc = s => String(s).replace(/[&<>"]/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]));
+const mins = c => c.secs.reduce((a, s) => a + s[1].reduce((b, l) => b + l[1], 0), 0);
+const lessons = c => c.secs.reduce((a, s) => a + s[1].length, 0);
+const fmt = m => { const h = Math.floor(m / 60), r = m % 60; return h ? `${h}h ${String(r).padStart(2, '0')}m` : `${r} min`; };
+const icon = id => `<svg aria-hidden="true"><use href="#${id}"/></svg>`;
+const imgFail = `onerror="this.parentNode.classList.add('img-fail')"`;
+
+document.getElementById('fact-hours').textContent = Math.floor(courses.reduce((a, c) => a + mins(c), 0) / 60) + '+';
+
+document.getElementById('ex-grid').innerHTML = exclusive.map(c => `
+  <article class="ex-card">
+    <span class="ex-ic" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.35" stroke-linecap="round" stroke-linejoin="round">${IC[c.ic]}</svg></span>
+    <h3>${esc(c.t)}</h3>
+    <p>${esc(c.line)}</p>
+    <button type="button" data-req="outline" data-course="${esc(c.t)}">Request the outline</button>
+  </article>`).join('');
+
+document.getElementById('grid').innerHTML = courses.map(c => `
+  <article class="card" data-cat="${c.cat}">
+    <div class="card-img">
+      <img src="${IMG + c.img}" alt="${esc(c.t)} course" loading="lazy" ${imgFail}>
+      <span class="card-cat">${CAT[c.cat]}</span>
+    </div>
+    <div class="card-body">
+      <h3>${esc(c.t)}</h3>
+      <p class="ov">${esc(c.ov)}</p>
+      <div class="meta">
+        <span>${icon('i-list')}${lessons(c)} lessons</span><span>${icon('i-clock')}${fmt(mins(c))}</span>${c.exam ? `<span>${icon('i-exam')}Mock and final exam</span>` : ''}
+      </div>
+      <button class="link-btn" type="button" data-open="${c.id}">View curriculum</button>
+    </div>
+  </article>`).join('');
+
+document.querySelectorAll('.filters button').forEach(b => b.addEventListener('click', () => {
+  document.querySelectorAll('.filters button').forEach(x => x.setAttribute('aria-pressed', x === b));
+  const f = b.dataset.f;
+  document.querySelectorAll('.card').forEach(card => { card.hidden = !(f === 'all' || card.dataset.cat === f); card.classList.remove('fade', 'reveal'); card.classList.add('in'); if (!card.hidden) { void card.offsetWidth; card.classList.add('fade'); } });
+}));
+
+const dlg = document.getElementById('course-dialog'), box = document.getElementById('m-content');
+function openCourse(id) {
+  const c = courses.find(x => x.id === id); if (!c) return;
+  box.innerHTML = `
+    <div class="m-head"><img src="${IMG + c.img}" alt="" ${imgFail}><button class="m-close" type="button" aria-label="Close">&times;</button></div>
+    <div class="m-body">
+      <p class="m-cat">${CAT[c.cat]}</p>
+      <h3 id="m-title">${esc(c.t)}</h3>
+      <p class="m-ov">${esc(c.ov)}</p>
+      <div class="m-stats"><span>${lessons(c)} lessons</span><span>${fmt(mins(c))} total</span>${c.exam ? '<span>Mock and final exam</span>' : ''}<span>Online, in English</span></div>
+      ${c.secs.map(s => `
+        <div class="m-sec">
+          <h4>${esc(s[0])}<small>${s[1].length} lessons, ${fmt(s[1].reduce((a, l) => a + l[1], 0))}</small></h4>
+          <ol class="lessons">${s[1].map(l => `<li><span>${esc(l[0])}</span><time>${fmt(l[1])}</time></li>`).join('')}</ol>
+        </div>`).join('')}
+      <div class="m-cta">
+        <button class="btn btn-plum" type="button" data-req="sample" data-course="${esc(c.t)}">Request a sample lesson</button>
+        <button class="btn btn-line" type="button" data-req="five" data-course="${esc(c.t)}">Add to my five</button>
+        <p>Included in the full bundle, or choose it as one of any five courses.</p>
+      </div>
+    </div>`;
+  box.querySelector('.m-close').addEventListener('click', () => dlg.close());
+  dlg.showModal();
+  dlg.scrollTop = 0;
+}
+document.getElementById('grid').addEventListener('click', e => { const card = e.target.closest('.card'); if (card) openCourse(card.querySelector('[data-open]').dataset.open); });
+
+/* ---------- request forms ----------
+   FORM_URL: paste the Web app URL from the Apps Script deployment here (see Enquiries.gs).
+   While it's empty, the forms open the visitor's email app instead, so nothing is lost. */
+const FORM_URL = 'https://script.google.com/macros/s/AKfycbwUO1mT_Qre0OdkCJqdlbd9J09szvj3p21ggRtOSW7NQihwFATTGDuIT87jdaj5D2VJ/exec';
+const CAL_URL = 'https://calendar.app.google/HN6ooYgpkTV29ktY9';
+const REQ = {
+  five: { type: 'Any five courses (£795)', title: 'Choose your five courses', intro: 'Pick the five core courses you’d like to license. We’ll confirm availability and send you the licence details.', pick: true, msg: 'Anything we should know? (optional)' },
+  exclusive: { type: 'The exclusive five (£895)', title: 'The exclusive five', intro: 'Tell us about your academy and we’ll send the course outlines for Hydrofacial, Microdermabrasion, Electrical Facials, Russian Semi-Permanent Lashes and Henna Brows, with licence details.', msg: 'Your question (optional)' },
+  outline: { type: 'Course outline', title: 'Request the course outline', intro: 'We’ll email you the full outline for this exclusive course and offer you a sample lesson.', msg: 'Anything else you’d like to know? (optional)' },
+  sample: { type: 'Sample lesson', title: 'Request a sample lesson', intro: 'Choose a course and we’ll send you a sample lesson, so you can judge the quality for your students.', chooseCourse: true, msg: 'Anything else you’d like to know? (optional)' }
+};
+const reqDlg = document.getElementById('req-dialog'), reqBox = document.getElementById('f-content');
+const allTitles = courses.map(c => c.t).concat(exclusive.map(c => c.t + ' (exclusive)'));
+
+function openRequest(kind, course) {
+  const R = REQ[kind]; if (!R) return;
+  if (dlg.open) dlg.close();
+  const course1 = course || '';
+  reqBox.innerHTML = `
+    <button class="f-close" type="button" aria-label="Close">&times;</button>
+    <form class="f-body" novalidate>
+      <h3 id="f-title">${esc(R.title)}${kind === 'outline' && course1 ? ': ' + esc(course1) : ''}</h3>
+      <p class="f-intro">${esc(R.intro)}</p>
+      ${R.pick ? `
+        <div class="pick-head"><b>Your courses</b><span class="pick-count" aria-live="polite"></span></div>
+        <div class="picks">${courses.map(c => `
+          <label class="pick${c.t === course1 ? ' on' : ''}">
+            <input type="checkbox" name="pick" value="${esc(c.t)}"${c.t === course1 ? ' checked' : ''}>
+            <img src="${IMG + c.img}" alt="" loading="lazy" onerror="this.outerHTML='<span class=noimg></span>'">
+            <span>${esc(c.t)}<small>${fmt(mins(c))}</small></span>
+          </label>`).join('')}</div>` : ''}
+      <div class="fields">
+        ${R.chooseCourse ? `<label class="full">Course
+          <select name="course">${allTitles.map(t => `<option${t === course1 ? ' selected' : ''}>${esc(t)}</option>`).join('')}<option${course1 ? '' : ' selected'}>Not sure yet</option></select></label>` : ''}
+        <label>Your name<input name="name" autocomplete="name" required></label>
+        <label>Email<input name="email" type="email" autocomplete="email" required></label>
+        <label>Academy or business<input name="academy" autocomplete="organization" required></label>
+        <label><span>Website <i>(optional)</i></span><input name="website" autocomplete="url" inputmode="url"></label>
+        <label class="full"><span>Country <i>(optional)</i></span><input name="country" autocomplete="country-name"></label>
+        <label class="full">${esc(R.msg)}<textarea name="message"></textarea></label>
+        <div class="hp" aria-hidden="true"><label>Company site<input name="company_site" tabindex="-1" autocomplete="off"></label></div>
+      </div>
+      <p class="f-error" role="alert"></p>
+      <div class="f-actions">
+        <button class="btn btn-plum" type="submit">Send request</button>
+        <p>We’ll only use these details to reply to your request. <button class="inline-link" type="button" data-privacy>How we use your details</button></p>
+      </div>
+    </form>`;
+  const form = reqBox.querySelector('form'), err = reqBox.querySelector('.f-error');
+  reqBox.querySelector('.f-close').addEventListener('click', () => reqDlg.close());
+
+  if (R.pick) {
+    const boxes = [...form.querySelectorAll('input[name=pick]')], count = form.querySelector('.pick-count');
+    const sync = () => {
+      const n = boxes.filter(b => b.checked).length;
+      boxes.forEach(b => { b.closest('.pick').classList.toggle('on', b.checked); b.disabled = !b.checked && n >= 5; b.closest('.pick').classList.toggle('off', b.disabled); });
+      count.innerHTML = `<strong>${n}</strong> of 5 chosen`;
+    };
+    boxes.forEach(b => b.addEventListener('change', sync)); sync();
+  }
+
+  form.addEventListener('submit', async ev => {
+    ev.preventDefault(); err.textContent = '';
+    const fd = new FormData(form);
+    const val = k => String(fd.get(k) || '').trim();
+    const picked = fd.getAll('pick');
+    if (R.pick && !picked.length) { err.textContent = 'Choose at least one course. You can finalise the rest in your meeting.'; return; }
+    if (!val('name') || !val('academy')) { err.textContent = 'Please add your name and your academy or business name.'; return; }
+    if (!/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(val('email'))) { err.textContent = 'Please check your email address.'; return; }
+    const courseList = R.pick ? picked.join(', ') : (val('course') || course1);
+    const data = { type: R.type, courses: courseList, name: val('name'), email: val('email'), academy: val('academy'),
+      website: val('website'), country: val('country'), message: val('message'), company_site: val('company_site'), page: location.href };
+
+    if (!FORM_URL) {   // fallback until the form is connected
+      const body = [`Request: ${data.type}`, data.courses && `Courses: ${data.courses}`, `Name: ${data.name}`, `Academy: ${data.academy}`,
+        data.website && `Website: ${data.website}`, data.country && `Country: ${data.country}`, data.message && `\n${data.message}`].filter(Boolean).join('\n');
+      location.href = `mailto:business@janets.org.uk?subject=${encodeURIComponent('[PLR request] ' + data.type + ' – ' + data.academy)}&body=${encodeURIComponent(body)}`;
+      return;
+    }
+    const btn = form.querySelector('[type=submit]'); btn.disabled = true; btn.textContent = 'Sending…';
+    try {
+      await fetch(FORM_URL, { method: 'POST', mode: 'no-cors', body: new URLSearchParams(data) });
+      reqBox.innerHTML = `
+        <button class="f-close" type="button" aria-label="Close">&times;</button>
+        <div class="f-done">
+          <div class="tick"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></div>
+          <h3 id="f-title">Request sent</h3>
+          <p>Thank you, ${esc(data.name.split(' ')[0])}. We’ll reply to ${esc(data.email)} soon. If you’d like to talk it through sooner, book a meeting at a time that suits you.</p>
+          <div class="f-actions"><a class="btn btn-plum" href="${CAL_URL}" target="_blank" rel="noopener">Book a meeting</a><button class="btn btn-line" type="button" data-close>Back to the page</button></div>
+        </div>`;
+      reqBox.querySelectorAll('.f-close,[data-close]').forEach(b => b.addEventListener('click', () => reqDlg.close()));
+    } catch (e) {
+      btn.disabled = false; btn.textContent = 'Send request';
+      err.innerHTML = 'Your request couldn’t be sent. Check your connection and try again, or email <a href="mailto:business@janets.org.uk">business@janets.org.uk</a>.';
+    }
+  });
+  reqDlg.showModal(); reqDlg.scrollTop = 0;
+}
+document.addEventListener('click', e => { const b = e.target.closest('[data-req]'); if (b) openRequest(b.dataset.req, b.dataset.course); });
+const pvDlg = document.getElementById('privacy-dialog');
+document.addEventListener('click', e => { if (e.target.closest('[data-privacy]')) { e.preventDefault(); pvDlg.showModal(); } });
+pvDlg.querySelector('[data-close-privacy]').addEventListener('click', () => pvDlg.close());
+pvDlg.addEventListener('click', e => { if (e.target === pvDlg) pvDlg.close(); });
+reqDlg.addEventListener('click', e => { if (e.target === reqDlg) reqDlg.close(); });
+dlg.addEventListener('click', e => { if (e.target === dlg) dlg.close(); });
+
+const pkg = document.getElementById('pkg'), fee = document.getElementById('fee'), out = document.getElementById('calc-out');
+function calc() {
+  const n = Math.ceil(Number(pkg.value) / Math.max(1, Number(fee.value) || 0));
+  out.textContent = `The licence pays for itself after ${n} enrolment${n === 1 ? '' : 's'}. Every enrolment after that is income for your academy.`;
+}
+pkg.addEventListener('change', calc); fee.addEventListener('input', calc); calc();
+
+/* ---------- navigation feel ---------- */
+const reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
+const bar = document.getElementById('progress'), toTop = document.getElementById('to-top');
+const navLinks = [...document.querySelectorAll('.top nav a[href^="#"]:not(.btn)')];
+const spyTargets = navLinks.map(a => document.querySelector(a.getAttribute('href'))).filter(Boolean);
+function onScroll() {
+  const h = document.documentElement, max = h.scrollHeight - h.clientHeight;
+  bar.style.transform = `scaleX(${max > 0 ? h.scrollTop / max : 0})`;
+  toTop.classList.toggle('show', h.scrollTop > 900);
+  let cur = null; spyTargets.forEach(t => { if (t.getBoundingClientRect().top < 140) cur = t.id; });
+  navLinks.forEach(a => a.classList.toggle('active', a.getAttribute('href') === '#' + cur));
+}
+addEventListener('scroll', onScroll, { passive: true }); onScroll();
+toTop.addEventListener('click', () => scrollTo({ top: 0, behavior: reduce ? 'auto' : 'smooth' }));
+
+// reveal sections and cards as they come into view (staggered)
+const revealSel = '.sec-head, .benefit, .card, .ex-card, .tier, .calc, .lic, .steps li, .faq details, .cta-grid > *';
+const groups = new Map();
+document.querySelectorAll(revealSel).forEach(el => {
+  if (el.closest('.hero') || el.closest('dialog')) return;
+  el.classList.add('reveal');
+  const parent = el.parentElement; const i = (groups.get(parent) || 0); groups.set(parent, i + 1);
+  el.style.transitionDelay = Math.min(i, 6) * 70 + 'ms';
+});
+if ('IntersectionObserver' in window && !reduce) {
+  const done = el => setTimeout(() => { el.classList.remove('reveal', 'in'); el.style.transitionDelay = ''; }, 1400);
+  const io = new IntersectionObserver(es => es.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in'); done(e.target); io.unobserve(e.target); } }), { rootMargin: '0px 0px -8% 0px', threshold: 0.08 });
+  document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+} else document.querySelectorAll('.reveal').forEach(el => el.classList.add('in'));
+
+// count up the hero figures once
+if (!reduce) document.querySelectorAll('.facts dd').forEach(dd => {
+  const m = dd.textContent.match(/^(\D*)(\d+)(\D*)$/); if (!m) return;
+  const end = +m[2], t0 = performance.now(), dur = 1200;
+  const step = t => { const k = Math.min(1, (t - t0) / dur), v = Math.round(end * (1 - Math.pow(1 - k, 3))); dd.textContent = m[1] + v + m[3]; if (k < 1) requestAnimationFrame(step); };
+  requestAnimationFrame(step);
+});
+</script>
 </body>
 </html>
